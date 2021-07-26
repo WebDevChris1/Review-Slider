@@ -40,12 +40,11 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.img {
+img {
   height: 160px;
   width: 160px;
   /* border: 2px solid var(--img-border-color); */
   border-radius: 50%;
-  background-image: url(./images/me.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -55,6 +54,12 @@ main {
   font-size: 1.2rem;
   color: var(--job-color);
 }
+
+/* .name {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 1.3rem;
+  color: var(--job-color);
+} */
 
 button {
   border: none;
