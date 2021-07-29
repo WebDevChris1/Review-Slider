@@ -46,7 +46,7 @@ if (reviewCounter === 0) {
 }
 
 nextBtn.addEventListener("click", function () {
-  if (reviewCounter === reviews.lengths - 1) {
+  if (reviewCounter === reviews.length - 1) {
     reviewCounter = 0;
     image.setAttribute(
       `style`,
@@ -54,8 +54,7 @@ nextBtn.addEventListener("click", function () {
     );
     job.textContent = reviews[reviewCounter].job;
     review.textContent = reviews[reviewCounter].reviewText;
-  } else if (reviewCounter >= 0) {
-    console.log("clicked");
+  } else if (reviewCounter < reviews.length) {
     reviewCounter++;
     image.setAttribute(
       `style`,
