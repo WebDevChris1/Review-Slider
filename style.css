@@ -1,16 +1,20 @@
+/* Import Font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Root */
 
 :root {
   --main-backgroung-color: #d9dbf1;
   --button-color: #3c00ff;
   --img-border-color: #667bd8;
   --job-color: #6262ff;
+  --name-color: #040404;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 main {
@@ -23,6 +27,7 @@ main {
   background-color: var(--main-backgroung-color);
 }
 
+/* Container */
 .container {
   height: 400px;
   width: 600px;
@@ -40,32 +45,34 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+/* General Styles */
+
 img {
-  height: 160px;
-  width: 160px;
-  /* border: 2px solid var(--img-border-color); */
+  height: 150px;
+  width: 150px;
+  border: 2px solid var(--img-border-color);
   border-radius: 50%;
   background-size: cover;
   background-position: center;
 }
 
-.job {
+.name {
   font-family: "Shadows Into Light", cursive;
-  font-size: 1.2rem;
-  color: var(--job-color);
+  font-size: 1.5rem;
+  color: var(--name-color);
 }
 
-/* .name {
+.job {
   font-family: "Shadows Into Light", cursive;
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: var(--job-color);
-} */
+}
 
 button {
   border: none;
   background-color: transparent;
   margin: 0 5px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--button-color);
   cursor: pointer;
 }

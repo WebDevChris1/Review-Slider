@@ -1,11 +1,15 @@
+// grab html elements
 const nextBtn = document.getElementById("next-btn");
 const prevBtn = document.getElementById("prev-btn");
 const image = document.getElementById("image");
 const reviewname = document.getElementById("name");
 const job = document.getElementById("job");
 const review = document.getElementById("review");
+
+// control which review to display
 let reviewCounter = 0;
 
+// array containing reviews
 const reviews = [
   {
     id: 1,
@@ -21,7 +25,7 @@ const reviews = [
     img: "url('./images/chris-rock.jpeg')",
     job: "Front End Developer",
     reviewText:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus neque ab vitae consectetur quidem molestiae, iusto placeat, eveniet sint sapiente iste ea nam accusantium, aspernatur natus! Odio nemo sunt voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus neque ab vitae consectetur quidem molestiae, iusto placeat, eveniet sint sapiente iste ea nam accusantium, aspernatur natus! Odio nemo sunt voluptatum.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus neque ab vitae consectetur quidem molestiae, iusto placeat, eveniet sint sapiente iste ea nam accusantium, aspernatur natus! Odio nemo sunt voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus neque ab vitae consectetur quidem molestiae, iusto placeat.",
   },
   {
     id: 3,
@@ -45,33 +49,14 @@ const reviews = [
     name: "Chris Lutch",
     job: "Full Stack Developer",
     reviewText:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus neque ab vitae consectetur quidem molestiae, iusto placeat, eveniet sint sapiente iste ea nam accusantium, aspernatur natus! Odio nemo sunt voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus neque ab vitae consectetur quidem molestiae, iusto placeat, eveniet sint sapiente iste ea nam accusantium.Accusamus neque ab vitae consectetur quidem molestiae, iusto placeat, eveniet sint sapiente iste ea nam accusantium.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus neque ab vitae consectetur quidem molestiae, iusto placeat, eveniet sint sapiente iste ea nam accusantium, aspernatur natus! Odio nemo sunt voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
 ];
 
+// set default review
 if (reviewCounter === 0) {
   renderReview();
 }
-
-nextBtn.addEventListener("click", function () {
-  if (reviewCounter === reviews.length - 1) {
-    reviewCounter = 0;
-    renderReview();
-  } else if (reviewCounter < reviews.length) {
-    reviewCounter++;
-    renderReview();
-  }
-});
-
-prevBtn.addEventListener("click", function () {
-  if (reviewCounter === 0) {
-    reviewCounter = reviews.length - 1;
-    renderReview();
-  } else if (reviewCounter > 0) {
-    reviewCounter--;
-    renderReview();
-  }
-});
 
 function renderReview() {
   image.setAttribute(
@@ -82,3 +67,28 @@ function renderReview() {
   job.textContent = reviews[reviewCounter].job;
   review.textContent = reviews[reviewCounter].reviewText;
 }
+
+// next button
+nextBtn.addEventListener("click", function () {
+  // loop forward
+  if (reviewCounter === reviews.length - 1) {
+    reviewCounter = 0;
+    renderReview();
+  } else if (reviewCounter < reviews.length) {
+    // get next review
+    reviewCounter++;
+    renderReview();
+  }
+});
+
+prevBtn.addEventListener("click", function () {
+  // loop back
+  if (reviewCounter === 0) {
+    reviewCounter = reviews.length - 1;
+    renderReview();
+  } else if (reviewCounter > 0) {
+    // get next review
+    reviewCounter--;
+    renderReview();
+  }
+});
